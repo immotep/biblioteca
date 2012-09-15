@@ -13,4 +13,8 @@ public class Menu {
     public String getMessage() {
         return "Select a valid option";
     }
+
+    public String menulist() {
+        return "view all books in the library";
+    }
 }
