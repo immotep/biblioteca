@@ -7,7 +7,8 @@ import static junit.framework.Assert.assertEquals;
 public class MenuTest {
 
 
-    Menu menu = new Menu();
+    private Menu menu = new Menu();
+    private String menuList = menu.menuListText();
 
     @Test
     public void testSelectOption() throws Exception {
@@ -22,10 +23,17 @@ public class MenuTest {
     }
 
     @Test
-    public void testMenuIsCreated() throws Exception {
-        String menulist = "view all books in the library";
+    public void testViewAllBooksInLibraryIsTheFirstLineOnMenuList() throws Exception {
+        String firstLineOfMenuList = menuList.split("\n")[0];
 
-       assertEquals(menulist, menu.menulist());
-
+        assertEquals("To view all books in the library, type 1", firstLineOfMenuList);
     }
+
+    @Test
+    public void testReserveABookIsAlsoOnMenuList() throws Exception {
+        String secondLineOfMenuList = menuList.split("\n")[1];
+
+        assertEquals("To reserve a book, type 2", secondLineOfMenuList);
+    }
+
 }
