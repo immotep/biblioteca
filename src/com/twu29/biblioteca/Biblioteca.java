@@ -5,6 +5,7 @@ import java.io.PrintStream;
 public class Biblioteca {
 
     private PrintStream outPrintStream;
+    private Menu menu = new Menu();
 
     public Biblioteca(PrintStream out) {
         this.outPrintStream = out;
@@ -17,8 +18,13 @@ public class Biblioteca {
         outPrintStream.println(welcomeMessage);
     }
 
+    public void printMenu(){
+        outPrintStream.println(menu.menuListText());
+    }
+
     public void run(){
         printWelcomeScreen();
+        printMenu();
     }
 
    public static void main (String[] args){
