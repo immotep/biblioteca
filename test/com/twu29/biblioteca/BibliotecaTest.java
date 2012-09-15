@@ -3,6 +3,7 @@ package com.twu29.biblioteca;
 
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -22,10 +23,18 @@ public class BibliotecaTest {
         String welcomeMessage = "    Welcome to the Bangalore Library System";
         String  bar = "===============================================";
         welcomeMessage = bar + "\n" + welcomeMessage + "\n" + bar;
-        Biblioteca  biblioteca = new Biblioteca(new PrintStream(outcontent));
+        Biblioteca  biblioteca = new Biblioteca(new ByteArrayInputStream("userInput".getBytes()), new PrintStream(outcontent));
 
         biblioteca.printWelcomeScreen();
 
         assertEquals(welcomeMessage, consoleOutput());
+    }
+
+    @Test
+    public void testGetUserInput() throws Exception {
+
+        Biblioteca biblioteca = new Biblioteca(new ByteArrayInputStream("userInput".getBytes()), new PrintStream(outcontent));
+
+        assertEquals("userInput", biblioteca.consoleInput());
     }
 }

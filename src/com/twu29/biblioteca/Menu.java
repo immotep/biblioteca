@@ -30,7 +30,6 @@ public class Menu {
         return allMenu.toString();
     }
 
-
     public MenuItem getMenuItem(String menuNumber) {
         try{
             return menuList.get(Integer.parseInt(menuNumber)-1);

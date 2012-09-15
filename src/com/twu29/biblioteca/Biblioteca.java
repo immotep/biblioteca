@@ -1,13 +1,15 @@
 package com.twu29.biblioteca;
 
-import java.io.PrintStream;
+import java.io.*;
 
 public class Biblioteca {
 
+    private InputStream inputStream;
     private PrintStream outPrintStream;
     private Menu menu = new Menu();
 
-    public Biblioteca(PrintStream out) {
+    public Biblioteca(InputStream inputStream, PrintStream out) {
+        this.inputStream = inputStream;
         this.outPrintStream = out;
     }
 
@@ -22,12 +24,26 @@ public class Biblioteca {
         outPrintStream.println(menu.menuListText());
     }
 
+    public String consoleInput() {
+
+        String input ="";
+        try{
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            input = bufferedReader.readLine();
+        } catch (IOException e){
+            outPrintStream.println("couldn't read user input");
+        }
+        return input;
+    }
+
+    // ---------------------------------------------------------------------------------------------
     public void run(){
         printWelcomeScreen();
         printMenu();
     }
 
    public static void main (String[] args){
-       new Biblioteca(System.out).run();
+       new Biblioteca(System.in, System.out).run();
    }
 }
+
