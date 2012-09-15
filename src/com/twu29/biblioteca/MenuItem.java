@@ -4,4 +4,8 @@ public class MenuItem {
     public String getOptions() {
         return null;
     }
+
+    public String select() {
+        return null;
+    }
 }
