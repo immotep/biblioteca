@@ -4,9 +4,8 @@ public class MenuItem {
 
     private String intent;
 
-    public MenuItem(String operation) {
-
-        this.intent = operation;
+    public MenuItem(String intent) {
+        this.intent = intent;
     }
 
     public String select() {

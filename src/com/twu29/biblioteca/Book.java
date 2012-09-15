@@ -8,7 +8,6 @@ public class Book {
         this.id = id;
     }
 
-
     public String getId() {
         return id;
     }
@@ -18,6 +17,6 @@ public class Book {
     }
 
     public void reserve() {
-       reserved = true;
+        reserved = true;
     }
 }

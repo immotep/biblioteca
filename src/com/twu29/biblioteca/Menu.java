@@ -9,14 +9,14 @@ public class Menu {
         createMenuList();
     }
 
-    private void createMenuList(){
+    private void createMenuList() {
         menuList.add(new MenuItem("view all books in the library"));
         menuList.add(new MenuItem("reserve a book"));
     }
 
     public String select(String optionIdentifier) {
-         return "corresponding " + optionIdentifier + " menu selected";
-     }
+        return "corresponding " + optionIdentifier + " menu selected";
+    }
 
     public String getMessage() {
         return "Select a valid option";
@@ -25,7 +25,7 @@ public class Menu {
     public String menuListText() {
         StringBuilder allMenu = new StringBuilder();
         for (MenuItem aMenu : menuList) {
-             allMenu.append("To " + aMenu.getIntent() + ", type " + String.valueOf(menuList.indexOf(aMenu)+1) + "\n" );
+            allMenu.append("To " + aMenu.getIntent() + ", type " + String.valueOf(menuList.indexOf(aMenu) + 1) + "\n");
         }
         return allMenu.toString();
     }
