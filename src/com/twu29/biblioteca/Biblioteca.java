@@ -7,6 +7,7 @@ public class Biblioteca {
     private InputStream inputStream;
     private PrintStream outPrintStream;
     private Menu menu = new Menu();
+    private Library library = new Library();
 
     public Biblioteca(InputStream inputStream, PrintStream out) {
         this.inputStream = inputStream;
@@ -34,6 +35,13 @@ public class Biblioteca {
             outPrintStream.println("couldn't read user input");
         }
         return input;
+    }
+
+    public void processUserChoice(String optionNumber){
+        if (optionNumber.equals("1")){
+            outPrintStream.println(library.listOfAllBooks());
+        }
+
     }
 
     // ---------------------------------------------------------------------------------------------

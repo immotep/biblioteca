@@ -37,4 +37,13 @@ public class BibliotecaTest {
 
         assertEquals("userInput", biblioteca.consoleInput());
     }
+
+    @Test
+    public void testProcessUserChoice() throws Exception {
+        Biblioteca biblioteca = new Biblioteca(new ByteArrayInputStream("1".getBytes()), new PrintStream(outcontent));
+
+        biblioteca.processUserChoice("1");
+
+        assertEquals(LibraryTest.LIST_OF_ALL_BOOKS.trim(), consoleOutput());
+     }
 }
