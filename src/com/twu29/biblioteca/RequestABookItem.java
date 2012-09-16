@@ -13,11 +13,10 @@ public class RequestABookItem extends MenuItem {
 
     @Override
     public String execute() {
+        return process(getBook());
+    }
 
-        biblioteca.printToScreen(super.execute());     // because you have to get a book number from the user
-        String bookNumber = biblioteca.consoleInput();
-
-        Book book = library.find(bookNumber);
+    public String process(Book book) {
         if (book == null)
             return "\nSorry we don't have that book yet.";
         if (book.isReserved())
@@ -25,5 +24,12 @@ public class RequestABookItem extends MenuItem {
 
         book.reserve();
         return "\nThank You! Enjoy the book.";
+    }
+
+    private Book getBook() {
+        biblioteca.printToScreen(super.execute());     // because you have to get a book number from the user
+        String bookNumber = biblioteca.consoleInput();
+
+        return library.find(bookNumber);
     }
 }

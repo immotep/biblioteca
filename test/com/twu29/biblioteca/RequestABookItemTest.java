@@ -7,35 +7,29 @@ import static org.junit.Assert.assertEquals;
 public class RequestABookItemTest {
 
     Library library = new Library();
+    BibliotecaTestDouble biblioteca = new BibliotecaTestDouble("anything");
+    RequestABookItem requestABook = new RequestABookItem(biblioteca, library);
+
 
     @Test
     public void testReserveABook() throws Exception {
+        Book book = new Book("someId");
 
-        BibliotecaTestDouble biblioteca = new BibliotecaTestDouble("1");
-        RequestABookItem requestABook = new RequestABookItem(biblioteca, library);
-
-        assertEquals("\nThank You! Enjoy the book.", requestABook.execute());
+        assertEquals(false, book.isReserved());
+        assertEquals("\nThank You! Enjoy the book.", requestABook.process(book));
     }
 
     @Test
     public void testBookAlreadyReserved() throws Exception {
+        Book book = new Book("someId");
+        book.reserve();
 
-        String bookNumber = "1";
-        library.find(bookNumber).reserve();
-
-        BibliotecaTestDouble biblioteca = new BibliotecaTestDouble(bookNumber);
-        RequestABookItem requestABook = new RequestABookItem(biblioteca, library);
-
-        assertEquals("\nBook already reserved by someone else.", requestABook.execute());
+        assertEquals("\nBook already reserved by someone else.", requestABook.process(book));
     }
 
     @Test
     public void testBookNotExisting() throws Exception {
-
-        BibliotecaTestDouble biblioteca = new BibliotecaTestDouble("Not existing book number");
-        RequestABookItem requestABook = new RequestABookItem(biblioteca, library);
-
-        assertEquals("\nSorry we don't have that book yet.", requestABook.execute());
+        assertEquals("\nSorry we don't have that book yet.", requestABook.process(null));
     }
 
 }

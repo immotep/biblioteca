@@ -8,6 +8,7 @@ public class Biblioteca {
     private PrintStream outPrintStream;
     private Menu menu = new Menu(this);
     private Library library = new Library();
+    private boolean quit = false;
 
     public Biblioteca(InputStream inputStream, PrintStream out) {
         this.inputStream = inputStream;
@@ -42,17 +43,23 @@ public class Biblioteca {
         return input;
     }
 
-    public void processUserChoice(String option) {
+    public boolean processUserChoice(String option) {
+        if (option.toLowerCase().equals("q")){
+            return true;
+        }
+
         MenuItem menuCommand = menu.select(option);
         printToScreen(menuCommand.execute());
-//        printToScreen(menuCommand.execute());
+        return false;
     }
 
     // ---------------------------------------------------------------------------------------------
     public void run() {
-        printWelcomeScreen();
-        printMenu();
-        processUserChoice(consoleInput());
+        while (!quit){
+            printWelcomeScreen();
+            printMenu();
+            quit = processUserChoice(consoleInput());
+        }
     }
 
     public static void main(String[] args) {
