@@ -24,4 +24,15 @@ public class Library {
         }
         return list.toString();
     }
+
+
+    public Book find(String bookNumber) {
+        try {
+            return allBooks.get(Integer.parseInt(bookNumber) - 1);
+        } catch (IndexOutOfBoundsException e){
+            return null;
+        }  catch (NumberFormatException e){
+            return null;
+        }
+    }
 }

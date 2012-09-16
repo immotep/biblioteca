@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 public class RequestABookItemTest {
     @Test
-    public void testExecuteCommand() throws Exception {
+    public void testReserveABook() throws Exception {
 
         BibliotecaTestDouble biblioteca = new BibliotecaTestDouble("1");
         RequestABookItem requestABook = new RequestABookItem(biblioteca);

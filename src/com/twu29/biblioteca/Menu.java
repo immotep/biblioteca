@@ -19,8 +19,8 @@ public class Menu {
 
     public String menuListText() {
         StringBuilder allMenu = new StringBuilder();
-        for (MenuItem aMenu : menuList) {
-            allMenu.append("To " + aMenu.getDescription() + ", type " + String.valueOf(menuList.indexOf(aMenu) + 1) + "\n");
+        for (MenuItem menuItem  : menuList) {
+            allMenu.append("To " + menuItem.getDescription() + ", type " + String.valueOf(menuList.indexOf(menuItem) + 1) + "\n");
         }
         return allMenu.toString();
     }
