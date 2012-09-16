@@ -19,7 +19,6 @@ public class MenuTest {
 
     @Test
     public void testViewAllBooksInLibraryIsTheFirstLineOnMenuList() throws Exception {
-        System.out.println(VIEW_BOOKS + " " + REQUEST_A_BOOK + " " + CHECK_LIBRARY_NUMBER);
 
         String firstLineOfMenuList = menuList.split("\n")[menu.VIEW_BOOKS_INDEX];
 
