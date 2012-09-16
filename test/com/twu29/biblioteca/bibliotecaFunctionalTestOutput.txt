@@ -1,0 +1,29 @@
+===============================================
+    Welcome to the Bangalore Library System
+===============================================
+To view all books in the library, type 1
+To reserve a book, type 2
+To check your library number, type 3
+>
+1. Book 0 ID
+2. Book 1 ID
+3. Book 2 ID
+4. Book 3 ID
+
+===============================================
+    Welcome to the Bangalore Library System
+===============================================
+To view all books in the library, type 1
+To reserve a book, type 2
+To check your library number, type 3
+>Enter book number:
+>
+Thank You! Enjoy the book.
+
+===============================================
+    Welcome to the Bangalore Library System
+===============================================
+To view all books in the library, type 1
+To reserve a book, type 2
+To check your library number, type 3
+>

@@ -7,10 +7,12 @@ public class Biblioteca {
     private InputStream inputStream;
     private PrintStream outPrintStream;
     private Menu menu = new Menu(this);
+    private BufferedReader bufferedReader;
     private boolean quit = false;
 
+
     public Biblioteca(InputStream inputStream, PrintStream out) {
-        this.inputStream = inputStream;
+        this.bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         this.outPrintStream = out;
     }
 
@@ -30,11 +32,10 @@ public class Biblioteca {
     }
 
     public String consoleInput() {
-        outPrintStream.print("> ");
+        outPrintStream.print(">");
 
         String input = "";
         try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             input = bufferedReader.readLine();
         } catch (IOException e) {
             printToScreen("couldn't read user input");
