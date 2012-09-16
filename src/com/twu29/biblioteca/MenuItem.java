@@ -1,18 +1,26 @@
 package com.twu29.biblioteca;
 
-public class MenuItem {
+public  class MenuItem {
 
-    private String intent;
+    private String description;
+    private String message;
 
-    public MenuItem(String intent) {
-        this.intent = intent;
+    public MenuItem(String description, String message) {
+        this.description = description;
+        this.message = message;
     }
 
-    public String select() {
-        return null;
+    public String response(){
+         return message;
     }
 
-    public String getIntent() {
-        return intent;
+    public void execute(){
+
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
+
+

@@ -3,22 +3,22 @@ package com.twu29.biblioteca;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 public class MenuItemTest {
 
     @Test
-    public void testMenuItemAsOption() throws Exception {
-        String intent = "something the user can do, appearing on the menu";
-        MenuItem menuItem = new MenuItem(intent);
+    public void testGetDescription() throws Exception {
+        String description = "something the user can do, appearing on the menu";
+        MenuItem menuItem = new MenuItem(description, "some response");
 
-        assertEquals(intent, menuItem.getIntent());
+        assertEquals(description, menuItem.getDescription());
     }
 
     @Test
-    public void testSelectMenuItemMessage() throws Exception {
-        MenuItem menuItem = new MenuItem("something the user can do, appearing on the menu");
-        assertNull(menuItem.select());
+    public void testGetResponseMessage() throws Exception {
+        String response = "interesting";
+        MenuItem menuItem = new MenuItem("something the user can do, appearing on the menu", response);
+        assertEquals(response, menuItem.response());
 
     }
 }

@@ -39,11 +39,20 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void testProcessUserChoice() throws Exception {
-        Biblioteca biblioteca = new Biblioteca(new ByteArrayInputStream("1".getBytes()), new PrintStream(outcontent));
+    public void testProcessPrintAllBooks() throws Exception {
+        Biblioteca biblioteca = new Biblioteca(new ByteArrayInputStream("userInput".getBytes()), new PrintStream(outcontent));
 
         biblioteca.processUserChoice("1");
 
         assertEquals(LibraryTest.LIST_OF_ALL_BOOKS.trim(), consoleOutput());
      }
+
+    @Test
+    public void testProcessReserveABook() throws Exception {
+        Biblioteca biblioteca = new Biblioteca(new ByteArrayInputStream("userInput".getBytes()), new PrintStream(outcontent));
+
+        biblioteca.processUserChoice("2");
+
+        assertEquals("Enter book number:", consoleOutput());
+    }
 }

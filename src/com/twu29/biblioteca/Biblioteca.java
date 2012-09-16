@@ -26,6 +26,7 @@ public class Biblioteca {
     }
 
     public String consoleInput() {
+        outPrintStream.print("> ");
 
         String input ="";
         try{
@@ -38,9 +39,7 @@ public class Biblioteca {
     }
 
     public void processUserChoice(String optionNumber){
-        if (optionNumber.equals("1")){
-            outPrintStream.println(library.listOfAllBooks());
-        }
+       outPrintStream.print(menu.getMenuItem(optionNumber).response());
 
     }
 
@@ -48,6 +47,7 @@ public class Biblioteca {
     public void run(){
         printWelcomeScreen();
         printMenu();
+        processUserChoice(consoleInput());
     }
 
    public static void main (String[] args){

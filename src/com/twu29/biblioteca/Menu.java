@@ -4,14 +4,15 @@ import java.util.*;
 
 public class Menu {
     private List<MenuItem> menuList = new ArrayList<MenuItem>();
+    private Library library = new Library();
 
     public Menu() {
         createMenuList();
     }
 
     private void createMenuList() {
-        menuList.add(new MenuItem("view all books in the library"));
-        menuList.add(new MenuItem("reserve a book"));
+        menuList.add(new MenuItem("view all books in the library", library.listOfAllBooks()));
+        menuList.add(new MenuItem("reserve a book", "Enter book number:"));
     }
 
     public String select(String optionIdentifier) {
@@ -25,7 +26,7 @@ public class Menu {
     public String menuListText() {
         StringBuilder allMenu = new StringBuilder();
         for (MenuItem aMenu : menuList) {
-            allMenu.append("To " + aMenu.getIntent() + ", type " + String.valueOf(menuList.indexOf(aMenu) + 1) + "\n");
+            allMenu.append("To " + aMenu.getDescription() + ", type " + String.valueOf(menuList.indexOf(aMenu) + 1) + "\n");
         }
         return allMenu.toString();
     }

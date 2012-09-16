@@ -40,8 +40,8 @@ public class MenuTest {
     @Test
     public void testgetMenuItemForExistingOptions() {
 
-        assertEquals("view all books in the library", menu.getMenuItem("1").getIntent());
-        assertEquals("reserve a book", menu.getMenuItem("2").getIntent());
+        assertEquals("view all books in the library", menu.getMenuItem("1").getDescription());
+        assertEquals("reserve a book", menu.getMenuItem("2").getDescription());
     }
 
     @Test
