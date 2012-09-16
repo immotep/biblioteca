@@ -14,8 +14,8 @@ public class MenuItem {
         return message;
     }
 
-    public void execute() {
-
+    public String execute() {
+        return null;
     }
 
     public String getDescription() {

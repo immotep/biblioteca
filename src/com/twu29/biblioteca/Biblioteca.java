@@ -45,7 +45,7 @@ public class Biblioteca {
     public void processUserChoice(String option) {
         MenuItem menuCommand = menu.select(option);
         printToScreen(menuCommand.response());
-        menuCommand.execute();
+        printToScreen(menuCommand.execute());
     }
 
     // ---------------------------------------------------------------------------------------------

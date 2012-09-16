@@ -14,7 +14,7 @@ public class Menu {
 
     private void createMenuList() {
         menuList.add(new MenuItem("view all books in the library", library.listOfAllBooks()));
-        menuList.add(new RequestABookItem(biblioteca));
+        menuList.add(new RequestABookItem(biblioteca,library));
     }
 
     public String menuListText() {
