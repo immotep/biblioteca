@@ -10,26 +10,35 @@ public class MenuTest {
     private Menu menu = new Menu(biblioteca);
     private String menuList = menu.menuListText();
 
+    private final int JAVA_INDEX_OFFSET = 1;
+    private final String VIEW_BOOKS = String.valueOf(menu.VIEW_BOOKS_INDEX + JAVA_INDEX_OFFSET);
+    private final String REQUEST_A_BOOK = String.valueOf(menu.REQUEST_A_BOOK_INDEX + JAVA_INDEX_OFFSET);
+    private final String CHECK_LIBRARY_NUMBER = String.valueOf(menu.CHECK_LIBRARY_NUMBER_INDEX + JAVA_INDEX_OFFSET);
+
+
+
     @Test
     public void testViewAllBooksInLibraryIsTheFirstLineOnMenuList() throws Exception {
-        String firstLineOfMenuList = menuList.split("\n")[0];
+        System.out.println(VIEW_BOOKS + " " + REQUEST_A_BOOK + " " + CHECK_LIBRARY_NUMBER);
 
-        assertEquals("To view all books in the library, type 1", firstLineOfMenuList);
+        String firstLineOfMenuList = menuList.split("\n")[menu.VIEW_BOOKS_INDEX];
+
+        assertEquals("To view all books in the library, type " + VIEW_BOOKS, firstLineOfMenuList);
     }
 
     @Test
     public void testReserveABookIsAlsoOnMenuList() throws Exception {
-        String secondLineOfMenuList = menuList.split("\n")[1];
+        String secondLineOfMenuList = menuList.split("\n")[menu.REQUEST_A_BOOK_INDEX];
 
-        assertEquals("To reserve a book, type 2", secondLineOfMenuList);
+        assertEquals("To reserve a book, type " + REQUEST_A_BOOK, secondLineOfMenuList);
     }
 
     @Test
     public void testSelectMenuForExistingOptions() {
 
-        assertEquals("view all books in the library", menu.select("1").getDescription());
-        assertEquals("reserve a book", menu.select("2").getDescription());
-        assertEquals("check your library number", menu.select("3").getDescription());
+        assertEquals("view all books in the library", menu.select(VIEW_BOOKS).getDescription());
+        assertEquals("reserve a book", menu.select(REQUEST_A_BOOK).getDescription());
+        assertEquals("check your library number", menu.select(CHECK_LIBRARY_NUMBER).getDescription());
     }
 
     @Test
@@ -41,9 +50,9 @@ public class MenuTest {
 
     @Test
     public void testCheckLibraryNumberIsOnMenuList() throws Exception {
-        String thirdLineOfMenuList = menuList.split("\n")[2];
+        String thirdLineOfMenuList = menuList.split("\n")[menu.CHECK_LIBRARY_NUMBER_INDEX];
 
-        assertEquals("To check your library number, type 3", thirdLineOfMenuList);
+        assertEquals("To check your library number, type " + CHECK_LIBRARY_NUMBER, thirdLineOfMenuList);
     }
 
 }

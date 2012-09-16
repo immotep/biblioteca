@@ -18,10 +18,15 @@ public class BibliotecaTest {
 
     @Test
     public void consoleInput() throws Exception {
-
         String input = "userTyped--Text";
         BibliotecaTestDouble  biblioteca = new BibliotecaTestDouble(input);
 
         assertEquals(input, biblioteca.consoleInput());
+    }
+
+    @Test
+    public void testQuit() throws Exception {
+       assertEquals(true, biblioteca.processUserChoice("q"));
+       assertEquals(true, biblioteca.processUserChoice("Q"));
     }
 }

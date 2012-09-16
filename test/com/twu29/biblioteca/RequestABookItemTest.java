@@ -24,7 +24,7 @@ public class RequestABookItemTest {
         Book book = new Book("someId");
         book.reserve();
 
-        assertEquals("Book already reserved by someone else.", requestABook.process(book));
+        assertEquals("Book already reserved by a member.", requestABook.process(book));
     }
 
     @Test

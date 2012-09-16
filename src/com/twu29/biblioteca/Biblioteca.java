@@ -48,8 +48,7 @@ public class Biblioteca {
         }
 
         MenuItem menuCommand = menu.select(option);
-        String response = menuCommand.execute();
-        printToScreen("\n" + response + "\n");
+        printToScreen("\n" + menuCommand.execute() + "\n");
         return false;
     }
 

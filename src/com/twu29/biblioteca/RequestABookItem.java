@@ -20,7 +20,7 @@ public class RequestABookItem extends MenuItem {
         if (book == null)
             return "Sorry we don't have that book yet.";
         if (book.isReserved())
-            return "Book already reserved by someone else.";
+            return "Book already reserved by a member.";
 
         book.reserve();
         return "Thank You! Enjoy the book.";
