@@ -29,6 +29,7 @@ public class MenuTest {
 
         assertEquals("view all books in the library", menu.select("1").getDescription());
         assertEquals("reserve a book", menu.select("2").getDescription());
+        assertEquals("check your library number", menu.select("3").getDescription());
     }
 
     @Test
@@ -36,6 +37,13 @@ public class MenuTest {
 
         assertEquals("entered a number but no corresponding option", menu.select("999").getDescription());
         assertEquals("entered rubbish text (not a number)", menu.select("aafalakfjkaj").getDescription());
+    }
+
+    @Test
+    public void testCheckLibraryNumberIsOnMenuList() throws Exception {
+        String thirdLineOfMenuList = menuList.split("\n")[2];
+
+        assertEquals("To check your library number, type 3", thirdLineOfMenuList);
     }
 
 }

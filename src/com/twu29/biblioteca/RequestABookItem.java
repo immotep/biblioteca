@@ -18,12 +18,12 @@ public class RequestABookItem extends MenuItem {
 
     public String process(Book book) {
         if (book == null)
-            return "\nSorry we don't have that book yet.";
+            return "Sorry we don't have that book yet.";
         if (book.isReserved())
-            return "\nBook already reserved by someone else.";
+            return "Book already reserved by someone else.";
 
         book.reserve();
-        return "\nThank You! Enjoy the book.";
+        return "Thank You! Enjoy the book.";
     }
 
     private Book getBook() {

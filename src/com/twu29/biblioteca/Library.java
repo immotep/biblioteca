@@ -22,16 +22,16 @@ public class Library {
         for (Book book : allBooks) {
             list.append(String.valueOf(allBooks.indexOf(book) + 1) + ". " + book.getId() + "\n");
         }
-        return list.toString();
+        return list.toString().trim();
     }
 
 
     public Book find(String bookNumber) {
         try {
             return allBooks.get(Integer.parseInt(bookNumber) - 1);
-        } catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             return null;
-        }  catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             return null;
         }
     }

@@ -7,7 +7,6 @@ public class Biblioteca {
     private InputStream inputStream;
     private PrintStream outPrintStream;
     private Menu menu = new Menu(this);
-    private Library library = new Library();
     private boolean quit = false;
 
     public Biblioteca(InputStream inputStream, PrintStream out) {
@@ -44,18 +43,19 @@ public class Biblioteca {
     }
 
     public boolean processUserChoice(String option) {
-        if (option.toLowerCase().equals("q")){
+        if (option.toLowerCase().equals("q")) {
             return true;
         }
 
         MenuItem menuCommand = menu.select(option);
-        printToScreen(menuCommand.execute());
+        String response = menuCommand.execute();
+        printToScreen("\n" + response + "\n");
         return false;
     }
 
     // ---------------------------------------------------------------------------------------------
     public void run() {
-        while (!quit){
+        while (!quit) {
             printWelcomeScreen();
             printMenu();
             quit = processUserChoice(consoleInput());

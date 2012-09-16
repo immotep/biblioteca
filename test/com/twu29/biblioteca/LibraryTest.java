@@ -7,7 +7,7 @@ import static junit.framework.Assert.assertNull;
 
 public class LibraryTest {
 
-    public static final String LIST_OF_ALL_BOOKS = "1. Book 0 ID\n2. Book 1 ID\n3. Book 2 ID\n4. Book 3 ID\n";
+    public static final String LIST_OF_ALL_BOOKS = "1. Book 0 ID\n2. Book 1 ID\n3. Book 2 ID\n4. Book 3 ID";
     Library library = new Library();
 
 

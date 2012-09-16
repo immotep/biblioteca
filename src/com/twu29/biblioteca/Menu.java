@@ -14,15 +14,16 @@ public class Menu {
 
     private void createMenuList() {
         menuList.add(new MenuItem("view all books in the library", library.listOfAllBooks()));
-        menuList.add(new RequestABookItem(biblioteca,library));
+        menuList.add(new RequestABookItem(biblioteca, library));
+        menuList.add(new MenuItem("check your library number", "Please talk to Librarian. Thank you."));
     }
 
     public String menuListText() {
         StringBuilder allMenu = new StringBuilder();
-        for (MenuItem menuItem  : menuList) {
+        for (MenuItem menuItem : menuList) {
             allMenu.append("To " + menuItem.getDescription() + ", type " + String.valueOf(menuList.indexOf(menuItem) + 1) + "\n");
         }
-        return allMenu.toString();
+        return allMenu.toString().trim();
     }
 
     public MenuItem select(String menuNumber) {
