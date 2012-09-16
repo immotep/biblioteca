@@ -3,56 +3,43 @@ package com.twu29.biblioteca;
 
 import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import static junit.framework.Assert.assertEquals;
 
 public class BibliotecaTest {
 
-    OutputStream outcontent = new ByteArrayOutputStream();
-
-    public String consoleOutput() {
-        return outcontent.toString().trim();
-    }
+    private BibliotecaTestDouble  biblioteca = new BibliotecaTestDouble("someUserInput");
 
     @Test
     public void testWelcomeScreen() throws Exception {
         String welcomeMessage = "    Welcome to the Bangalore Library System";
         String  bar = "===============================================";
         welcomeMessage = bar + "\n" + welcomeMessage + "\n" + bar;
-        Biblioteca  biblioteca = new Biblioteca(new ByteArrayInputStream("userInput".getBytes()), new PrintStream(outcontent));
 
         biblioteca.printWelcomeScreen();
 
-        assertEquals(welcomeMessage, consoleOutput());
+        assertEquals(welcomeMessage, biblioteca.consoleOutput());
     }
 
     @Test
-    public void testGetUserInput() throws Exception {
+    public void consoleInput() throws Exception {
 
-        Biblioteca biblioteca = new Biblioteca(new ByteArrayInputStream("userInput".getBytes()), new PrintStream(outcontent));
+        String input = "userTyped--Text";
+        BibliotecaTestDouble  biblioteca = new BibliotecaTestDouble(input);
 
-        assertEquals("userInput", biblioteca.consoleInput());
+        assertEquals(input, biblioteca.consoleInput());
     }
 
     @Test
     public void testProcessPrintAllBooks() throws Exception {
-        Biblioteca biblioteca = new Biblioteca(new ByteArrayInputStream("userInput".getBytes()), new PrintStream(outcontent));
-
         biblioteca.processUserChoice("1");
 
-        assertEquals(LibraryTest.LIST_OF_ALL_BOOKS.trim(), consoleOutput());
+        assertEquals(LibraryTest.LIST_OF_ALL_BOOKS.trim(), biblioteca.consoleOutput());
      }
 
     @Test
     public void testProcessReserveABook() throws Exception {
-        Biblioteca biblioteca = new Biblioteca(new ByteArrayInputStream("userInput".getBytes()), new PrintStream(outcontent));
-
         biblioteca.processUserChoice("2");
 
-        assertEquals("Enter book number:", consoleOutput());
+        assertEquals("Enter book number:", biblioteca.consoleOutput());
     }
 }
