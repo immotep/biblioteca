@@ -9,7 +9,7 @@ public class MenuItemTest {
     @Test
     public void testGetDescription() throws Exception {
         String description = "something the user can do, appearing on the menu";
-        MenuItem menuItem = new MenuItem(description, "some response");
+        MenuItem menuItem = new MenuItem(description, "some execute");
 
         assertEquals(description, menuItem.getDescription());
     }
@@ -19,6 +19,6 @@ public class MenuItemTest {
         String response = "interesting";
         MenuItem menuItem = new MenuItem("something the user can do, appearing on the menu", response);
 
-        assertEquals(response, menuItem.response());
+        assertEquals(response, menuItem.execute());
     }
 }

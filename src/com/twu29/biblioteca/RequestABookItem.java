@@ -13,6 +13,8 @@ public class RequestABookItem extends MenuItem {
 
     @Override
     public String execute() {
+
+        biblioteca.printToScreen(super.execute());     // because you have to get a book number from the user
         String bookNumber = biblioteca.consoleInput();
 
         Book book = library.find(bookNumber);

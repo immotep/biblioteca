@@ -10,12 +10,8 @@ public class MenuItem {
         this.message = message;
     }
 
-    public String response() {
-        return message;
-    }
-
     public String execute() {
-        return null;
+        return message;
     }
 
     public String getDescription() {
