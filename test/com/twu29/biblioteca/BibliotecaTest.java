@@ -1,6 +1,5 @@
 package com.twu29.biblioteca;
 
-
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
@@ -10,14 +9,11 @@ public class BibliotecaTest {
     private BibliotecaTestDouble  biblioteca = new BibliotecaTestDouble("someUserInput");
 
     @Test
-    public void testWelcomeScreen() throws Exception {
-        String welcomeMessage = "    Welcome to the Bangalore Library System";
-        String  bar = "===============================================";
-        welcomeMessage = bar + "\n" + welcomeMessage + "\n" + bar;
+    public void testprintToScreen() throws Exception {
+        String message = "some text to print";
+        biblioteca.printToScreen(message);
 
-        biblioteca.printWelcomeScreen();
-
-        assertEquals(welcomeMessage, biblioteca.consoleOutput());
+        assertEquals(message, biblioteca.consoleOutput());
     }
 
     @Test
@@ -27,19 +23,5 @@ public class BibliotecaTest {
         BibliotecaTestDouble  biblioteca = new BibliotecaTestDouble(input);
 
         assertEquals(input, biblioteca.consoleInput());
-    }
-
-    @Test
-    public void testProcessPrintAllBooks() throws Exception {
-        biblioteca.processUserChoice("1");
-
-        assertEquals(LibraryTest.LIST_OF_ALL_BOOKS.trim(), biblioteca.consoleOutput());
-     }
-
-    @Test
-    public void testProcessReserveABook() throws Exception {
-        biblioteca.processUserChoice("2");
-
-        assertEquals("Enter book number:", biblioteca.consoleOutput());
     }
 }

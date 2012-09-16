@@ -1,6 +1,6 @@
 package com.twu29.biblioteca;
 
-public  class MenuItem {
+public class MenuItem {
 
     private String description;
     private String message;
@@ -10,11 +10,11 @@ public  class MenuItem {
         this.message = message;
     }
 
-    public String response(){
-         return message;
+    public String response() {
+        return message;
     }
 
-    public void execute(){
+    public void execute() {
 
     }
 

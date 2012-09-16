@@ -5,22 +5,16 @@ import java.util.*;
 public class Menu {
     private List<MenuItem> menuList = new ArrayList<MenuItem>();
     private Library library = new Library();
+    private Biblioteca biblioteca;
 
-    public Menu() {
+    public Menu(Biblioteca biblioteca) {
+        this.biblioteca = biblioteca;
         createMenuList();
     }
 
     private void createMenuList() {
         menuList.add(new MenuItem("view all books in the library", library.listOfAllBooks()));
-        menuList.add(new MenuItem("reserve a book", "Enter book number:"));
-    }
-
-    public String select(String optionIdentifier) {
-        return "corresponding " + optionIdentifier + " menu selected";
-    }
-
-    public String getMessage() {
-        return "Select a valid option";
+        menuList.add(new RequestABookItem(biblioteca));
     }
 
     public String menuListText() {
@@ -31,11 +25,13 @@ public class Menu {
         return allMenu.toString();
     }
 
-    public MenuItem getMenuItem(String menuNumber) {
-        try{
-            return menuList.get(Integer.parseInt(menuNumber)-1);
-        } catch(Exception e){
-            return null;
+    public MenuItem select(String menuNumber) {
+        try {
+            return menuList.get(Integer.parseInt(menuNumber) - 1);
+        } catch (NumberFormatException e) {
+            return new MenuItem("entered rubbish text (not a number)", "Select a valid option!!");
+        } catch (IndexOutOfBoundsException e) {
+            return new MenuItem("entered a number but no corresponding option", "Select a valid option!!");
         }
     }
 }

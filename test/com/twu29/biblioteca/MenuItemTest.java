@@ -18,7 +18,7 @@ public class MenuItemTest {
     public void testGetResponseMessage() throws Exception {
         String response = "interesting";
         MenuItem menuItem = new MenuItem("something the user can do, appearing on the menu", response);
-        assertEquals(response, menuItem.response());
 
+        assertEquals(response, menuItem.response());
     }
 }

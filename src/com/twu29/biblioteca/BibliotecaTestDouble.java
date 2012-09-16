@@ -2,7 +2,7 @@ package com.twu29.biblioteca;
 
 import java.io.*;
 
-public class BibliotecaTestDouble extends  Biblioteca{
+public class BibliotecaTestDouble extends Biblioteca {
 
     private OutputStream outContent;
 

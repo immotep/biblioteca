@@ -3,25 +3,12 @@ package com.twu29.biblioteca;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 public class MenuTest {
 
-
-    private Menu menu = new Menu();
+    private BibliotecaTestDouble biblioteca = new BibliotecaTestDouble("someInput");
+    private Menu menu = new Menu(biblioteca);
     private String menuList = menu.menuListText();
-
-    @Test
-    public void testSelectOption() throws Exception {
-       assertEquals("corresponding bljkfjalfa menu selected", menu.select("bljkfjalfa"));
-    }
-
-    @Test
-    public void testSelectValidOption() throws Exception {
-        menu.select("invalid option");
-
-        assertEquals("Select a valid option", menu.getMessage());
-    }
 
     @Test
     public void testViewAllBooksInLibraryIsTheFirstLineOnMenuList() throws Exception {
@@ -38,17 +25,17 @@ public class MenuTest {
     }
 
     @Test
-    public void testgetMenuItemForExistingOptions() {
+    public void testSelectMenuForExistingOptions() {
 
-        assertEquals("view all books in the library", menu.getMenuItem("1").getDescription());
-        assertEquals("reserve a book", menu.getMenuItem("2").getDescription());
+        assertEquals("view all books in the library", menu.select("1").getDescription());
+        assertEquals("reserve a book", menu.select("2").getDescription());
     }
 
     @Test
-    public void testgetMenuItemForInvalidOption() {
+    public void testSelectMenuForInvalidOption() {
 
-        assertNull(menu.getMenuItem("999"));
-        assertNull(menu.getMenuItem("fafda"));
+        assertEquals("entered a number but no corresponding option", menu.select("999").getDescription());
+        assertEquals("entered rubbish text (not a number)", menu.select("aafalakfjkaj").getDescription());
     }
 
 }
