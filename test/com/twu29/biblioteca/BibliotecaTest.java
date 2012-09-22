@@ -6,7 +6,7 @@ import static junit.framework.Assert.assertEquals;
 
 public class BibliotecaTest {
 
-    private BibliotecaTestDouble  biblioteca = new BibliotecaTestDouble("someUserInput");
+    private Biblioteca  biblioteca = Biblioteca.create("someUserInput");
 
     @Test
     public void testprintToScreen() throws Exception {
@@ -19,7 +19,7 @@ public class BibliotecaTest {
     @Test
     public void consoleInput() throws Exception {
         String input = "userTyped--Text";
-        BibliotecaTestDouble  biblioteca = new BibliotecaTestDouble(input);
+        Biblioteca  biblioteca = Biblioteca.create(input);
 
         assertEquals(input, biblioteca.consoleInput());
     }

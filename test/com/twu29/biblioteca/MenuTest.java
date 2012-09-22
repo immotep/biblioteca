@@ -6,7 +6,7 @@ import static junit.framework.Assert.assertEquals;
 
 public class MenuTest {
 
-    private BibliotecaTestDouble biblioteca = new BibliotecaTestDouble("someInput");
+    private Biblioteca biblioteca = Biblioteca.create("someInput");
     private Menu menu = new Menu(biblioteca);
     private String menuList = menu.menuListText();
 

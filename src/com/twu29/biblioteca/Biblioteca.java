@@ -11,7 +11,7 @@ public class Biblioteca {
     private static ByteArrayOutputStream outContent;
 
 
-    public Biblioteca(InputStream inputStream, PrintStream out) {
+    private Biblioteca(InputStream inputStream, PrintStream out) {
         this.bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         this.outPrintStream = out;
     }

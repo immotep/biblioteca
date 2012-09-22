@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class RequestABookItemTest {
 
     Library library = new Library();
-    BibliotecaTestDouble biblioteca = new BibliotecaTestDouble("anything");
+    Biblioteca biblioteca = Biblioteca.create("anything");
     RequestABookItem requestABook = new RequestABookItem(biblioteca, library);
 
 

@@ -19,7 +19,7 @@ public class BibliotecaFunctionalTest {
 
      String expectedOutput = readExpectedOutputFrom("test/com/twu29/biblioteca/bibliotecaFunctionalTestOutput.txt");
 
-     BibliotecaTestDouble  biblioteca = new BibliotecaTestDouble(instructions);
+     Biblioteca  biblioteca = Biblioteca.create(instructions);
      biblioteca.run();
 
      assertEquals(expectedOutput, biblioteca.consoleOutput());
