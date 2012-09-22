@@ -4,6 +4,7 @@
 To view all books in the library, type 1
 To reserve a book, type 2
 To check your library number, type 3
+To view our movie catalog, type 4
 >
 1. Book 0 ID
 2. Book 1 ID
@@ -16,6 +17,7 @@ To check your library number, type 3
 To view all books in the library, type 1
 To reserve a book, type 2
 To check your library number, type 3
+To view our movie catalog, type 4
 >Enter book number:
 >
 Thank You! Enjoy the book.
@@ -26,4 +28,5 @@ Thank You! Enjoy the book.
 To view all books in the library, type 1
 To reserve a book, type 2
 To check your library number, type 3
+To view our movie catalog, type 4
 >
