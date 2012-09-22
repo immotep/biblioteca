@@ -33,7 +33,7 @@ public class MenuTest {
     }
 
     @Test
-    public void testSelectMenuForExistingOptions() {
+    public void testSelectMenuForExistingOptions() throws Exception{
 
         assertEquals("view all books in the library", menu.select(VIEW_BOOKS).getDescription());
         assertEquals("reserve a book", menu.select(REQUEST_A_BOOK).getDescription());
@@ -41,10 +41,23 @@ public class MenuTest {
     }
 
     @Test
-    public void testSelectMenuForInvalidOption() {
+    public void testSelectMenuForMenuNumberOutOfBound() {
 
-        assertEquals("entered a number but no corresponding option", menu.select("999").getDescription());
-        assertEquals("entered rubbish text (not a number)", menu.select("aafalakfjkaj").getDescription());
+        try {
+            menu.select("9999999999");
+        } catch (InvalidOptionException e){
+            assertEquals("Select a valid option!!", e.getMessage());
+        }
+    }
+
+    @Test
+    public void testSelectMenuForUnComprehensibleText() {
+
+        try {
+            menu.select("afafafgdagakljanvjanjkhvui");
+        } catch (InvalidOptionException e){
+            assertEquals("Select a valid option!!", e.getMessage());
+        }
     }
 
     @Test

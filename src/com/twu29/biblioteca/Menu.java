@@ -31,13 +31,13 @@ public class Menu {
         return allMenu.toString().trim();
     }
 
-    public MenuItem select(String menuNumber) {
+    public MenuItem select(String menuNumber) throws InvalidOptionException{
         try {
             return menuList.get(Integer.parseInt(menuNumber) - JAVA_INDEX_OFFSET);       // -1 because java index starts at 0
         } catch (NumberFormatException e) {
-            return new MenuItem("entered rubbish text (not a number)", "Select a valid option!!");
+            throw new InvalidOptionException();
         } catch (IndexOutOfBoundsException e) {
-            return new MenuItem("entered a number but no corresponding option", "Select a valid option!!");
+            throw new InvalidOptionException();
         }
     }
 }

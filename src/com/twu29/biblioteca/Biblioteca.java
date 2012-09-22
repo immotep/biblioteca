@@ -29,6 +29,8 @@ public class Biblioteca {
         outPrintStream.println(message);
     }
 
+    //---------------------------------------------------------------------------------------------------
+
     public void printWelcomeScreen() {
         String welcomeMessage = "    Welcome to the Bangalore Library System";
         String bar = "===============================================";
@@ -57,12 +59,17 @@ public class Biblioteca {
             return true;
         }
 
-        MenuItem menuCommand = menu.select(option);
-        printToScreen("\n" + menuCommand.execute() + "\n");
+        try{
+            MenuItem menuCommand = menu.select(option);
+            printToScreen("\n" + menuCommand.execute() + "\n");
+        } catch (InvalidOptionException e){
+            printToScreen("\n" + e.getMessage() + "\n");
+        }
         return false;
     }
 
     // ---------------------------------------------------------------------------------------------
+
     public void run() {
         while (!quit) {
             printWelcomeScreen();
