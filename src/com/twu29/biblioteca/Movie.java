@@ -1,5 +1,7 @@
 package com.twu29.biblioteca;
 
+import java.text.MessageFormat;
+
 public class Movie {
     private final String title;
     private final String actor;
@@ -19,6 +21,8 @@ public class Movie {
     }
 
     public String details() {
-        return title + " " + actor + " " + director + " " + rating;
+
+        String format = MessageFormat.format("%-{0}s %-{0}s %-{0}s %s", 25);
+        return String.format(format, title, actor, director, rating);
     }
 }
