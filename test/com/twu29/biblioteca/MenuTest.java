@@ -15,8 +15,6 @@ public class MenuTest {
     public static final String REQUEST_A_BOOK = String.valueOf(Menu.REQUEST_A_BOOK_INDEX + JAVA_INDEX_OFFSET);
     public static final String CHECK_LIBRARY_NUMBER = String.valueOf(Menu.CHECK_LIBRARY_NUMBER_INDEX + JAVA_INDEX_OFFSET);
 
-
-
     @Test
     public void testViewAllBooksInLibraryIsTheFirstLineOnMenuList() throws Exception {
 

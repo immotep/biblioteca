@@ -17,7 +17,7 @@ public class BibliotecaFunctionalTest {
      String aBookNumber = "2";
      String instructions = MenuTest.VIEW_BOOKS + and + MenuTest.REQUEST_A_BOOK + and + aBookNumber + and + quit + "\n";
 
-     String expectedOutput = readExpectedOutputFrom("test/com/twu29/biblioteca/bibliotecaFunctionalTestOutput.txt");
+     String expectedOutput = readExpectedOutputFrom("resources/FunctionalTestOutput.txt");
 
      Biblioteca  biblioteca = Biblioteca.create(instructions);
      biblioteca.run();
