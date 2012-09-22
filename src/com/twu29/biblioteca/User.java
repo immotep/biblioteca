@@ -3,12 +3,24 @@ package com.twu29.biblioteca;
 public class User {
 
     private boolean status = false;
+    private final String username;
+    private final String password;
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+     }
 
     public boolean IsloggedIn() {
         return status;
     }
 
-    public void login() {
-        status = true;
+    public void login(String username, String password) {
+       if (username.equals(this.username) && password.equals(this.password))
+            status = true;
+    }
+
+    public void logout() {
+        status = false;
     }
 }
