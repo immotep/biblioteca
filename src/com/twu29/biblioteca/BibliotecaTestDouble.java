@@ -15,6 +15,7 @@ public class BibliotecaTestDouble extends Biblioteca {
         this.outContent = outContent;
     }
 
+    @Override
     public String consoleOutput() {
         return outContent.toString().trim();
     }

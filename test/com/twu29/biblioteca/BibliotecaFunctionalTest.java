@@ -25,10 +25,8 @@ public class BibliotecaFunctionalTest {
      assertEquals(expectedOutput, biblioteca.consoleOutput());
     }
 
-
     private String readExpectedOutputFrom(String filename) {
         File file = new File(filename);
-
         String expectedMessage = "";
         try {
             expectedMessage = FileUtils.readFileToString(file);
