@@ -1,11 +1,15 @@
 package com.twu29.biblioteca;
 
-/**
- * Created with IntelliJ IDEA.
- * User: mnandri
- * Date: 2012/09/22
- * Time: 10:21 PM
- * To change this template use File | Settings | File Templates.
- */
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class UserDataBaseTest {
+    @Test
+    public void testUserExist() throws Exception {
+
+        UserDataBase allUsers = new UserDataBase();
+
+        assertEquals(false, allUsers.find("111-1111"));
+    }
 }
