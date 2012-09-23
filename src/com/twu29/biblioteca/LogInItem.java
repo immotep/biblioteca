@@ -1,11 +1,44 @@
 package com.twu29.biblioteca;
 
-/**
- * Created with IntelliJ IDEA.
- * User: mnandri
- * Date: 2012/09/22
- * Time: 11:41 PM
- * To change this template use File | Settings | File Templates.
- */
-public class LogInItem {
+public class LogInItem extends MenuItem {
+    private final Biblioteca biblioteca;
+    private final UserDataBase userDataBase;
+
+    public LogInItem(Biblioteca biblioteca, UserDataBase userDataBase) {
+        super("login", "You have successfully logged in");
+        this.biblioteca = biblioteca;
+        this.userDataBase = userDataBase;
+    }
+
+    @Override
+    public String getDescription() {
+        if (userDataBase.getCurrentUser().isLoggedIn()){
+            return "logout";
+        }
+        return super.getDescription();
+    }
+
+    @Override
+    public String execute() {
+        if (userDataBase.getCurrentUser().isLoggedIn()){
+            userDataBase.getCurrentUser().logout();
+            return "You have successfully logged out";
+        }
+
+        String username = userInput("username:");
+        String password = userInput("password:");
+        return process(username, password);
+    }
+
+    private String userInput(String label) {
+        biblioteca.printToScreen(label);
+        return biblioteca.consoleInput();
+    }
+
+    public String process(String username, String password) {
+        if (userDataBase.loginCurrentUser(username, password))
+            return "You have successfully logged in";
+
+        return "Wrong username and/or password";
+    }
 }
