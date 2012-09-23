@@ -24,7 +24,7 @@ public class Menu {
     private void createMenuList() {
         menuList.add(new MenuItem("view all books in the library", library.listOfAllBooks()));
         menuList.add(new RequestABookItem(biblioteca, library));
-        menuList.add(new CheckLibraryNumber(userDataBase));
+        menuList.add(new CheckLibraryNumberItem(userDataBase));
         menuList.add(new MenuItem("view our movie catalog", movieCatalog.listAllMovies()));
         menuList.add(new LogInItem(biblioteca, userDataBase));
     }

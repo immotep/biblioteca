@@ -11,7 +11,7 @@ public class CheckLibraryNumberTest {
     @Test
     public void testNoUserLoggedIn() throws Exception {
 
-        CheckLibraryNumber checkLibraryNumber = new CheckLibraryNumber(userDataBase);
+        CheckLibraryNumberItem checkLibraryNumber = new CheckLibraryNumberItem(userDataBase);
 
         assertEquals("Please talk to Librarian. Thank you.", checkLibraryNumber.execute());
     }
@@ -19,7 +19,7 @@ public class CheckLibraryNumberTest {
     @Test
     public void testAUserIsLoggedIn() throws Exception {
 
-        CheckLibraryNumber checkLibraryNumber = new CheckLibraryNumber(userDataBase);
+        CheckLibraryNumberItem checkLibraryNumber = new CheckLibraryNumberItem(userDataBase);
         userDataBase.loginCurrentUser("111-1111", "pass_0");
 
         assertEquals("Your Library number is: 111-1111", checkLibraryNumber.execute());

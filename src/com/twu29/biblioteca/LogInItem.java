@@ -25,9 +25,7 @@ public class LogInItem extends MenuItem {
             return "You have successfully logged out";
         }
 
-        String username = userInput("username:");
-        String password = userInput("password:");
-        return process(username, password);
+        return process(userInput("username:"), userInput("password:"));
     }
 
     private String userInput(String label) {

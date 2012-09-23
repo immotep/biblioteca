@@ -1,10 +1,10 @@
 package com.twu29.biblioteca;
 
-public class CheckLibraryNumber extends MenuItem{
+public class CheckLibraryNumberItem extends MenuItem{
 
     private UserDataBase userDataBase;
 
-    public CheckLibraryNumber(UserDataBase userDataBase) {
+    public CheckLibraryNumberItem(UserDataBase userDataBase) {
         super("check your library number", "Please talk to Librarian. Thank you.");
         this.userDataBase = userDataBase;
     }
