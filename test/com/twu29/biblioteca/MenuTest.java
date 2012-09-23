@@ -15,6 +15,7 @@ public class MenuTest {
     public static final String REQUEST_A_BOOK = String.valueOf(Menu.REQUEST_A_BOOK_INDEX + JAVA_INDEX_OFFSET);
     public static final String CHECK_LIBRARY_NUMBER = String.valueOf(Menu.CHECK_LIBRARY_NUMBER_INDEX + JAVA_INDEX_OFFSET);
     private static final String VIEW_MOVIES_CATALOG = String.valueOf(Menu.VIEW_MOVIES_CATALOG_INDEX + JAVA_INDEX_OFFSET);
+    private static final String LOGIN = String.valueOf(Menu.LOGIN_INDEX + JAVA_INDEX_OFFSET) ;
 
     @Test
     public void testViewAllBooksInLibraryIsTheFirstLineOnMenuList() throws Exception {
@@ -38,6 +39,7 @@ public class MenuTest {
         assertEquals("reserve a book", menu.select(REQUEST_A_BOOK).getDescription());
         assertEquals("check your library number", menu.select(CHECK_LIBRARY_NUMBER).getDescription());
         assertEquals("view our movie catalog", menu.select(VIEW_MOVIES_CATALOG).getDescription());
+        assertEquals("login", menu.select(LOGIN).getDescription());
     }
 
     @Test
@@ -72,5 +74,12 @@ public class MenuTest {
         String fourthLineOfMenuList = menuList.split("\n")[Menu.VIEW_MOVIES_CATALOG_INDEX];
 
         assertEquals("To view our movie catalog, type " + VIEW_MOVIES_CATALOG, fourthLineOfMenuList);
+    }
+
+    @Test
+    public void testLogInIsOnMenuList() throws Exception {
+        String fifthLineOfMenuList = menuList.split("\n")[Menu.LOGIN_INDEX];
+
+        assertEquals("To login, type " + LOGIN, fifthLineOfMenuList);
     }
 }

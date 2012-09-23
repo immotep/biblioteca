@@ -11,7 +11,7 @@ public class User {
         this.password = password;
      }
 
-    public boolean IsloggedIn() {
+    public boolean isLoggedIn() {
         return status;
     }
 
@@ -23,4 +23,6 @@ public class User {
     public void logout() {
         status = false;
     }
+
+
 }

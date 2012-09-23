@@ -8,11 +8,13 @@ public class Menu {
     private Library library = new Library();
     private MovieCatalog movieCatalog = new MovieCatalog();
     private Biblioteca biblioteca;
+    private UserDataBase userDataBase = new UserDataBase();
 
     public static final int VIEW_BOOKS_INDEX = 0;
     public static final int REQUEST_A_BOOK_INDEX =  1;
     public static final int CHECK_LIBRARY_NUMBER_INDEX = 2;
     public static final int VIEW_MOVIES_CATALOG_INDEX = 3;
+    public static final int LOGIN_INDEX = 4;
 
     public Menu(Biblioteca biblioteca) {
         this.biblioteca = biblioteca;
@@ -24,6 +26,7 @@ public class Menu {
         menuList.add(new RequestABookItem(biblioteca, library));
         menuList.add(new MenuItem("check your library number", "Please talk to Librarian. Thank you."));
         menuList.add(new MenuItem("view our movie catalog", movieCatalog.listAllMovies()));
+        menuList.add(new LogInItem(biblioteca, userDataBase));
     }
 
     public String menuListText() {

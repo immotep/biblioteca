@@ -9,7 +9,7 @@ public class UserTest {
     public void testIsNotLoggedInByDefault() throws Exception {
         User user = new User("libraryNumber", "password");
 
-        assertEquals(false, user.IsloggedIn());
+        assertEquals(false, user.isLoggedIn());
     }
 
     @Test
@@ -17,7 +17,7 @@ public class UserTest {
         User user = new User("111-1111", "pass_1");
         user.login("wrongUsername", "pass_1");
 
-        assertEquals(false, user.IsloggedIn());
+        assertEquals(false, user.isLoggedIn());
     }
 
     @Test
@@ -25,7 +25,7 @@ public class UserTest {
         User user = new User("111-1111", "pass_1");
         user.login("111-1111", "wrongpassword");
 
-        assertEquals(false, user.IsloggedIn());
+        assertEquals(false, user.isLoggedIn());
     }
 
 
@@ -34,7 +34,7 @@ public class UserTest {
         User user = new User("111-1111", "pass_1");
         user.login("111-1111", "pass_1");
 
-        assertEquals(true, user.IsloggedIn());
+        assertEquals(true, user.isLoggedIn());
     }
 
     @Test
@@ -44,6 +44,6 @@ public class UserTest {
 
         user.logout();
 
-        assertEquals(false, user.IsloggedIn());
+        assertEquals(false, user.isLoggedIn());
     }
 }
