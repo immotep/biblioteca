@@ -41,4 +41,18 @@ public class LogInItemTest {
 
         assertEquals("You have successfully logged in", loginItem.execute());
     }
+
+    @Test
+    public void testLogInDescription() throws Exception {
+       assertEquals("login", loginItem.getDescription());
+    }
+
+    @Test
+    public void testLogOutDescription() throws Exception {
+
+        userDataBase.loginCurrentUser("111-1111", "pass_0");
+
+        assertEquals("logout", loginItem.getDescription());
+    }
+
 }
