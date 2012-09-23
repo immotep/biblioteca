@@ -24,5 +24,7 @@ public class User {
         status = false;
     }
 
-
+    public String getUsername() {
+        return username;
+    }
 }
