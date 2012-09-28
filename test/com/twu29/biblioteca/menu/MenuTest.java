@@ -2,7 +2,6 @@ package com.twu29.biblioteca.menu;
 
 import com.twu29.biblioteca.Biblioteca;
 import com.twu29.biblioteca.InvalidOptionException;
-import com.twu29.biblioteca.menu.Menu;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
@@ -21,9 +20,9 @@ public class MenuTest {
     public static final int CHECK_LIBRARY_NUMBER_INDEX = 2;
     public static final String CHECK_LIBRARY_NUMBER = String.valueOf(CHECK_LIBRARY_NUMBER_INDEX + JAVA_INDEX_OFFSET);
     public static final int VIEW_MOVIES_CATALOG_INDEX = 3;
-    private static final String VIEW_MOVIES_CATALOG = String.valueOf(VIEW_MOVIES_CATALOG_INDEX + JAVA_INDEX_OFFSET);
+    public static final String VIEW_MOVIES_CATALOG = String.valueOf(VIEW_MOVIES_CATALOG_INDEX + JAVA_INDEX_OFFSET);
     public static final int LOGIN_INDEX = 4;
-    private static final String LOGIN = String.valueOf(LOGIN_INDEX + JAVA_INDEX_OFFSET) ;
+    public static final String LOGIN = String.valueOf(LOGIN_INDEX + JAVA_INDEX_OFFSET) ;
 
     @Test
     public void testViewAllBooksInLibraryIsTheFirstLineOnMenuList() throws Exception {

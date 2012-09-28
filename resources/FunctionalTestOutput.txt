@@ -27,3 +27,34 @@ To check your library number, type 3
 To view our movie catalog, type 4
 To login, type 5
 >
+Please talk to Librarian. Thank you.
+
+To view all books in the library, type 1
+To reserve a book, type 2
+To check your library number, type 3
+To view our movie catalog, type 4
+To login, type 5
+>
+Movie                     Name                      Director                  Rating
+Title 1                   Actor 1                   Director 1                1
+Long Title 2              Actor 2                   Director 2                2
+Title 3                   Actor Name 3              Director 1                1
+Really Long Title 1       Actor 1                   Long Director Name 1      9
+Title 8                   Really Long Actor Name    Dir                       N/A
+
+To view all books in the library, type 1
+To reserve a book, type 2
+To check your library number, type 3
+To view our movie catalog, type 4
+To login, type 5
+>username:
+>password:
+>
+Wrong username and/or password
+
+To view all books in the library, type 1
+To reserve a book, type 2
+To check your library number, type 3
+To view our movie catalog, type 4
+To login, type 5
+>

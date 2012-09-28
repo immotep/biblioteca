@@ -16,7 +16,11 @@ public class BibliotecaFunctionalTest {
      String and = "\n";
      String quit = "q";
      String aBookNumber = "2";
-     String instructions = MenuTest.VIEW_BOOKS + and + MenuTest.REQUEST_A_BOOK + and + aBookNumber + and + quit + "\n";
+     String username = "111-1111";
+     String password = "uttermostly wrong password";
+     String instructions = MenuTest.VIEW_BOOKS + and + MenuTest.REQUEST_A_BOOK + and + aBookNumber + and +
+              MenuTest.CHECK_LIBRARY_NUMBER + and + MenuTest.VIEW_MOVIES_CATALOG + and +
+             MenuTest.LOGIN + and + username + and + password + and + quit + "\n";
 
      String expectedOutput = readExpectedOutputFrom("resources/FunctionalTestOutput.txt");
 
