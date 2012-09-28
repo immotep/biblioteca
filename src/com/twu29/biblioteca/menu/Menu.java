@@ -1,4 +1,6 @@
-package com.twu29.biblioteca;
+package com.twu29.biblioteca.menu;
+
+import com.twu29.biblioteca.*;
 
 import java.util.*;
 

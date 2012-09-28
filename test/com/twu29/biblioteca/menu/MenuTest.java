@@ -1,5 +1,8 @@
-package com.twu29.biblioteca;
+package com.twu29.biblioteca.menu;
 
+import com.twu29.biblioteca.Biblioteca;
+import com.twu29.biblioteca.InvalidOptionException;
+import com.twu29.biblioteca.menu.Menu;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;

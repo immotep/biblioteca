@@ -1,5 +1,9 @@
-package com.twu29.biblioteca;
+package com.twu29.biblioteca.menu;
 
+import com.twu29.biblioteca.Biblioteca;
+import com.twu29.biblioteca.Book;
+import com.twu29.biblioteca.Library;
+import com.twu29.biblioteca.menu.RequestABookItem;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

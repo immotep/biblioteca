@@ -1,5 +1,8 @@
 package com.twu29.biblioteca;
 
+import com.twu29.biblioteca.menu.Menu;
+import com.twu29.biblioteca.menu.MenuItem;
+
 import java.io.*;
 
 public class Biblioteca {

@@ -1,6 +1,9 @@
-package com.twu29.biblioteca;
+package com.twu29.biblioteca.menu;
 
-public class CheckLibraryNumberItem extends MenuItem{
+import com.twu29.biblioteca.UserDataBase;
+import com.twu29.biblioteca.menu.MenuItem;
+
+public class CheckLibraryNumberItem extends MenuItem {
 
     private UserDataBase userDataBase;
 

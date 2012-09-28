@@ -1,4 +1,8 @@
-package com.twu29.biblioteca;
+package com.twu29.biblioteca.menu;
+
+import com.twu29.biblioteca.Biblioteca;
+import com.twu29.biblioteca.UserDataBase;
+import com.twu29.biblioteca.menu.MenuItem;
 
 public class LogInItem extends MenuItem {
     private final Biblioteca biblioteca;

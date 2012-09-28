@@ -1,5 +1,7 @@
-package com.twu29.biblioteca;
+package com.twu29.biblioteca.menu;
 
+import com.twu29.biblioteca.UserDataBase;
+import com.twu29.biblioteca.menu.CheckLibraryNumberItem;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

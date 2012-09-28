@@ -1,4 +1,4 @@
-package com.twu29.biblioteca;
+package com.twu29.biblioteca.menu;
 
 import org.junit.Test;
 
