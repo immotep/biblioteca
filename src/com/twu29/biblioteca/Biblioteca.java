@@ -54,7 +54,7 @@ public class Biblioteca {
         } catch (IOException e) {
             printToScreen("couldn't read user input");
         }
-        return input;
+        return input.trim();
     }
 
     public boolean processUserChoice(String option) {
