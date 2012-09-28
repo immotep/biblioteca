@@ -7,7 +7,7 @@ import java.util.List;
 public class MovieCatalog {
     
     private List<Movie> allMovies = new ArrayList<Movie>();
-    public static String printMovieFormat = MessageFormat.format("%-{0}s %-{0}s %-{0}s %s", 25);
+    public static final String PRINT_MOVIE_FORMAT = MessageFormat.format("%-{0}s %-{0}s %-{0}s %s", 25);
 
     public MovieCatalog() {
         createAllMovies();
@@ -31,6 +31,6 @@ public class MovieCatalog {
     }
 
     private String movieListingHeader() {
-        return String.format(printMovieFormat, "Movie", "Name", "Director", "Rating");
+        return String.format(PRINT_MOVIE_FORMAT, "Movie", "Name", "Director", "Rating");
     }
 }

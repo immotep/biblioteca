@@ -18,6 +18,6 @@ public class Movie {
     }
 
     public String details() {
-        return String.format(MovieCatalog.printMovieFormat, title, actor, director, rating);
+        return String.format(MovieCatalog.PRINT_MOVIE_FORMAT, title, actor, director, rating);
     }
 }
