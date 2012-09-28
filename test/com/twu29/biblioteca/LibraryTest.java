@@ -19,16 +19,19 @@ public class LibraryTest {
     @Test
     public void testFindExistingBook() {
 
-        assertEquals("Book 0 ID", library.find("1").getId());
         assertEquals("Book 1 ID", library.find("2").getId());
-        assertEquals("Book 2 ID", library.find("3").getId());
-        assertEquals("Book 3 ID", library.find("4").getId());
     }
 
     @Test
-    public void testFindNotExistingBook() {
+    public void testFindOutOfBoundBookNumber() {
 
         assertNull(library.find("999999"));
+    }
+
+    @Test
+    public void testFindNonSenseBookNumber() {
+
         assertNull(library.find("afajkfjakfja"));
     }
+
 }
