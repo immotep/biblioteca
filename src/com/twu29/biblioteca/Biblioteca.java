@@ -74,8 +74,8 @@ public class Biblioteca {
     // ---------------------------------------------------------------------------------------------
 
     public void run() {
+        printWelcomeScreen();
         while (!quit) {
-            printWelcomeScreen();
             printMenu();
             quit = processUserChoice(consoleInput());
         }
