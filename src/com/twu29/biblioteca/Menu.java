@@ -10,12 +10,6 @@ public class Menu {
     private Biblioteca biblioteca;
     private UserDataBase userDataBase = new UserDataBase();
 
-    public static final int VIEW_BOOKS_INDEX = 0;
-    public static final int REQUEST_A_BOOK_INDEX =  1;
-    public static final int CHECK_LIBRARY_NUMBER_INDEX = 2;
-    public static final int VIEW_MOVIES_CATALOG_INDEX = 3;
-    public static final int LOGIN_INDEX = 4;
-
     public Menu(Biblioteca biblioteca) {
         this.biblioteca = biblioteca;
         createMenuList();
