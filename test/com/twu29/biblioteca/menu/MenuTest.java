@@ -1,6 +1,7 @@
 package com.twu29.biblioteca.menu;
 
 import com.twu29.biblioteca.Biblioteca;
+import com.twu29.biblioteca.BibliotecaFactory;
 import com.twu29.biblioteca.InvalidOptionException;
 import org.junit.Test;
 
@@ -8,7 +9,8 @@ import static junit.framework.Assert.assertEquals;
 
 public class MenuTest {
 
-    private Biblioteca biblioteca = Biblioteca.create("someInput");
+    private BibliotecaFactory bibliotecaFactory = new BibliotecaFactory("someUserInput");
+    private Biblioteca  biblioteca = bibliotecaFactory.getBiblioteca();
     private Menu menu = new Menu(biblioteca);
     private String menuList = menu.menuListText();
 

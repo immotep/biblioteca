@@ -24,10 +24,11 @@ public class BibliotecaFunctionalTest {
 
      String expectedOutput = readExpectedOutputFrom("resources/FunctionalTestOutput.txt");
 
-     Biblioteca  biblioteca = Biblioteca.create(instructions);
+     BibliotecaFactory bibliotecaFactory = new BibliotecaFactory(instructions);
+     Biblioteca  biblioteca = bibliotecaFactory.getBiblioteca();
      biblioteca.run();
 
-     assertEquals(expectedOutput, biblioteca.consoleOutput());
+     assertEquals(expectedOutput, bibliotecaFactory.consoleOutput());
     }
 
     private String readExpectedOutputFrom(String filename) {

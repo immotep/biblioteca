@@ -6,20 +6,22 @@ import static junit.framework.Assert.assertEquals;
 
 public class BibliotecaTest {
 
-    private Biblioteca  biblioteca = Biblioteca.create("someUserInput");
+    private BibliotecaFactory bibliotecaFactory = new BibliotecaFactory("someUserInput");
+    private Biblioteca  biblioteca = bibliotecaFactory.getBiblioteca();
 
     @Test
     public void testprintToScreen() throws Exception {
         String message = "some text to print";
         biblioteca.printToScreen(message);
 
-        assertEquals(message, biblioteca.consoleOutput());
+        assertEquals(message, bibliotecaFactory.consoleOutput());
     }
 
     @Test
     public void consoleInput() throws Exception {
         String input = "userTyped--Text";
-        Biblioteca  biblioteca = Biblioteca.create(input);
+        BibliotecaFactory bibliotecaFactory = new BibliotecaFactory(input);
+        biblioteca = bibliotecaFactory.getBiblioteca();
 
         assertEquals(input, biblioteca.consoleInput());
     }

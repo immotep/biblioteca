@@ -1,17 +1,19 @@
 package com.twu29.biblioteca.menu;
 
 import com.twu29.biblioteca.Biblioteca;
+import com.twu29.biblioteca.BibliotecaFactory;
 import com.twu29.biblioteca.Book;
 import com.twu29.biblioteca.Library;
-import com.twu29.biblioteca.menu.RequestABookItem;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class RequestABookItemTest {
 
-    Library library = new Library();
-    Biblioteca biblioteca = Biblioteca.create("anything");
+    private Library library = new Library();
+    private BibliotecaFactory bibliotecaFactory = new BibliotecaFactory("someUserInput");
+    private Biblioteca  biblioteca = bibliotecaFactory.getBiblioteca();
+
     RequestABookItem requestABook = new RequestABookItem(biblioteca, library);
 
 
@@ -21,6 +23,7 @@ public class RequestABookItemTest {
 
         assertEquals(false, book.isReserved());
         assertEquals("Thank You! Enjoy the book.", requestABook.process(book));
+
     }
 
     @Test

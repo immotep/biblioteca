@@ -8,9 +8,9 @@ public class MovieTest {
 
     @Test
     public void testDetails() throws Exception {
-        String movieDetails = "Sholay                    Ramesh                    Sippy                     N/A";
+        String movieDetails = "Sholay                    1975    Ramesh Sippy              N/A";
 
-        Movie movie = new Movie("Sholay", "Ramesh", "Sippy");
+        Movie movie = new Movie("Sholay", 1975, "Ramesh Sippy");
 
         assertEquals(movieDetails, movie.details());
     }

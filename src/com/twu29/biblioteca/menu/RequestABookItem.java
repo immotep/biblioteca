@@ -3,7 +3,6 @@ package com.twu29.biblioteca.menu;
 import com.twu29.biblioteca.Biblioteca;
 import com.twu29.biblioteca.Book;
 import com.twu29.biblioteca.Library;
-import com.twu29.biblioteca.menu.MenuItem;
 
 public class RequestABookItem extends MenuItem {
 
@@ -32,7 +31,7 @@ public class RequestABookItem extends MenuItem {
     }
 
     private Book getBook() {
-        biblioteca.printToScreen(super.execute());     // because you have to get a book number from the user
+        biblioteca.printToScreen(super.execute());
         String bookNumber = biblioteca.consoleInput();
 
         return library.find(bookNumber);

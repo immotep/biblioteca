@@ -1,16 +1,17 @@
 package com.twu29.biblioteca.menu;
 
 import com.twu29.biblioteca.Biblioteca;
+import com.twu29.biblioteca.BibliotecaFactory;
 import com.twu29.biblioteca.UserDataBase;
-import com.twu29.biblioteca.menu.LogInItem;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class LogInItemTest {
 
-    UserDataBase userDataBase = new UserDataBase();
-    Biblioteca biblioteca = Biblioteca.create("something");
+    private UserDataBase userDataBase = new UserDataBase();
+    private BibliotecaFactory bibliotecaFactory = new BibliotecaFactory("someUserInput");
+    private Biblioteca  biblioteca = bibliotecaFactory.getBiblioteca();
     private LogInItem loginItem = new LogInItem(biblioteca, userDataBase);
 
     @Test
@@ -39,7 +40,8 @@ public class LogInItemTest {
 
     @Test
     public void testLogInUser() throws Exception {
-        Biblioteca biblioteca = Biblioteca.create("111-1111\npass_0");
+        BibliotecaFactory bibliotecaFactory = new BibliotecaFactory("111-1111\npass_0");
+        Biblioteca  biblioteca = bibliotecaFactory.getBiblioteca();
         LogInItem loginItem = new LogInItem(biblioteca, userDataBase);
 
         assertEquals("You have successfully logged in", loginItem.execute());
