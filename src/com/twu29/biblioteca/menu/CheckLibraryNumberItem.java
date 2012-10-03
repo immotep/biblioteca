@@ -1,7 +1,6 @@
 package com.twu29.biblioteca.menu;
 
 import com.twu29.biblioteca.UserDataBase;
-import com.twu29.biblioteca.menu.MenuItem;
 
 public class CheckLibraryNumberItem extends MenuItem {
 
@@ -15,7 +14,7 @@ public class CheckLibraryNumberItem extends MenuItem {
     @Override
     public String execute() {
         if (userDataBase.getCurrentUser().isLoggedIn())
-            return "Your Library number is: " + userDataBase.getCurrentUser().getUsername();
+            return "Your details: \n" + userDataBase.getCurrentUser().details();
 
         return super.execute();
     }

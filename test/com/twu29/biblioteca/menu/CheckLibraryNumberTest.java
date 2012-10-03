@@ -23,6 +23,12 @@ public class CheckLibraryNumberTest {
         CheckLibraryNumberItem checkLibraryNumber = new CheckLibraryNumberItem(userDataBase);
         userDataBase.loginCurrentUser("111-1111", "pass_0");
 
-        assertEquals("Your Library number is: 111-1111", checkLibraryNumber.execute());
+        String expected = "Your details: \n" +
+                          "Library Number: 111-1111\n" +
+                          "Name: Naval_0 Andrian\n" +
+                          "Phone Number: 011 489 1907\n" +
+                          "Email: naval_0@naval.nav";
+
+        assertEquals(expected, checkLibraryNumber.execute());
     }
 }

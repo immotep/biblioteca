@@ -11,13 +11,15 @@ public class UserDataBase {
 
     public UserDataBase() {
         createAllUsers();
-        currentUser = new User("", "");
+        currentUser = new User("", "", new String[]{"Naval Andrian", "011 489 1907", "naval@naval.nav"});
     }
 
     private void createAllUsers(){
         for (int i = 0; i <10; i++){
             String libraryNumber =  "111-" + (LIBRARY_BASE_NUMBER + i);
-            allUsers.put(libraryNumber, new User(libraryNumber, "pass_" + i));
+            String name_suffix = "aval_" + i;
+            String[] details = {"N" + name_suffix + " Andrian", "011 489 1907", "n" + name_suffix + "@naval.nav"};
+            allUsers.put(libraryNumber, new User(libraryNumber, "pass_" + i, details));
         }
     }
 

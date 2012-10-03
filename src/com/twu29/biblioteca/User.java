@@ -5,10 +5,16 @@ public class User {
     private boolean status = false;
     private final String username;
     private final String password;
+    private String name;
+    private String phone;
+    private String email;
 
-    public User(String username, String password) {
+    public User(String username, String password, String[] details) {
         this.username = username;
         this.password = password;
+        name = details[0];
+        phone = details[1];
+        email = details[2];
      }
 
     public boolean isLoggedIn() {
@@ -24,7 +30,12 @@ public class User {
         status = false;
     }
 
-    public String getUsername() {
-        return username;
+    public String details() {
+        String details = "Library Number: " + username + "\n";
+        details += "Name: " + name + "\n";
+        details += "Phone Number: " + phone +  "\n";
+        details += "Email: " + email;
+
+        return details;
     }
 }
